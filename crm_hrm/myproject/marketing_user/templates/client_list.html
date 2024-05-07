@@ -1,0 +1,28 @@
+<!-- marketing_user/templates/client_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client List</title>
+</head>
+
+<body>
+    <h1>Client List</h1>
+    <ul>
+        {% for client in clients %}
+        <li>{{ client.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_client' %}">Add Client</a>
+    <!-- Logout button -->
+    {% if request.user.is_authenticated %}
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    {% endif %}
+</body>
+
+</html>

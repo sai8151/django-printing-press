@@ -1,0 +1,37 @@
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore static files directory
+/staticfiles/
+
+# Ignore media files directory
+/media/
+
+# Ignore environment configuration files
+.env
+
+# Ignore compiled Python bytecode
+__pycache__/
+*.pyc
+
+# Ignore IDE and editor-specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore local settings file
+myproject/local_settings.py
+
+# Ignore secret key file
+secret_key.txt
+
+# Ignore deployment-related files
+*.log
+*.pid
+*.sock
+*.gz
+*.tar
+*.zip
+*.rar

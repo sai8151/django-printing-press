@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Add your CSS stylesheets or links here -->
+</head>
+
+<body>
+    <h1>User Profile</h1>
+    <div>
+        <p>Welcome, {{ user.username }}!</p>
+        <!-- Display user ID -->
+        <p>User ID: {{ user.id }}</p>
+        <!-- Display different content based on user's role -->
+        {% if user.is_staff %}
+        <!-- If the user is a marketing team member -->
+        <p>You are part of the marketing team.</p>
+        <!-- Show URLs for managing clients -->
+        <ul>
+            <li><a href="{% url 'add_client' %}">Add Client</a></li>
+            <li><a href="{% url 'client_list' %}">View Clients</a></li>
+        </ul>
+        {% else %}
+        <!-- If the user is a client -->
+        <p>You are a client.</p>
+        <!-- Show URL for uploading CSV data -->
+        {% endif %}
+    </div>
+    <!-- Add any additional content or forms for profile editing -->
+</body>
+
+</html>

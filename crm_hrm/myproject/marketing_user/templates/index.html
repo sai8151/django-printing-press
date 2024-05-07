@@ -1,0 +1,438 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing Press - ID Cards</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+        }
+
+        .testimonials-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .testimonial {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .testimonial-author {
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section h2 {
+            margin-bottom: 30px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .content-section img {
+            max-width: 100%;
+        }
+
+        /* Additional Section */
+        .additional-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+
+        .additional-section h3 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .additional-section ul {
+            padding-left: 20px;
+        }
+
+        .additional-section li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .additional-section p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Custom CSS */
+
+        /* Navbar */
+        .navbar {
+            background-color: #343a40;
+            /* Dark background color */
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            /* Navbar link color */
+            margin-right: 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #e73700;
+            /* Navbar link hover color */
+        }
+
+        /* Image Slider */
+        .carousel-item img {
+            height: 500px;
+            /* Adjust slider image height */
+            object-fit: cover;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #e73700;
+            /* Slider control icon color */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 10%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            /* Footer background color */
+            color: #ffffff;
+            /* Footer text color */
+        }
+
+        .footer h5 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .footer ul li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .footer ul li:before {
+            content: "\2022";
+            /* Bullet character */
+            color: #e73700;
+            /* Bullet color */
+            font-size: 12px;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .footer .bg-secondary {
+            background-color: #212529;
+            /* Footer secondary background color */
+            color: #ffffff;
+            /* Footer secondary text color */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar-nav .nav-link {
+                margin-right: 10px;
+            }
+
+            footer .container {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            footer .col-md-6 {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Printing Press</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Image Slider -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static 'img/id_card_01.jpeg' %}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'img/id_card_02.png' %}" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'img/id_card_03.avif' %}" alt="Third slide">
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+            </svg>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+            </svg>
+        </a>
+
+    </div>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Welcome to Our Printing Press</h2>
+                    <p>We are dedicated to providing high-quality printing solutions for all your identification needs.
+                        Whether you're a school, college, or organization, we offer customized ID card printing services
+                        to
+                        suit your requirements.</p>
+                    <p>Our team of experts ensures that every ID card we produce meets the highest standards of quality
+                        and
+                        durability. From design to printing, we handle every aspect with precision and care to deliver
+                        outstanding results.</p>
+                    <p>With our advanced printing technology and attention to detail, we can create ID cards that
+                        reflect
+                        the professionalism and integrity of your institution or organization. From student IDs to
+                        employee
+                        badges, our solutions are tailored to your specifications.</p>
+                    <p>At our printing press, we prioritize customer satisfaction above all else. We work closely with
+                        our
+                        clients to understand their needs and deliver solutions that exceed their expectations. Our
+                        commitment to excellence and reliability sets us apart in the industry.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'img/id_card_02.png' %}" alt="Printing Press Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Section -->
+    <section class="additional-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li>Custom ID Card Printing</li>
+                        <li>Employee Badge Design</li>
+                        <li>Student ID Card Solutions</li>
+                        <li>Membership Card Printing</li>
+                        <li>Event Passes and Credentials</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Why Choose Us?</h3>
+                    <p>1. Experience: With years of experience in the industry, we have the expertise to deliver
+                        exceptional
+                        printing solutions.</p>
+                    <p>2. Quality: We use the latest printing technology and premium materials to ensure the highest
+                        quality
+                        results for every project.</p>
+                    <p>3. Customer Focus: Our dedicated team is committed to providing personalized service and support
+                        to
+                        meet your unique needs.</p>
+                    <p>4. Timely Delivery: We understand the importance of deadlines and strive to deliver your orders
+                        on
+                        time, every time.</p>
+                    <p>5. Competitive Pricing: We offer competitive pricing without compromising on quality, making our
+                        services accessible to all.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>"Clients for years, we've always trusted this printing press for our identification needs.
+                            Their commitment to quality
+                            and timely delivery has been consistent, making them our go-to choice every time."
+                        </p>
+                        <p class="testimonial-author">- Rahul Sharma, School Administrator</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>"As a school principal, I've been consistently impressed by the professionalism and attention
+                            to detail exhibited by this
+                            printing press. Their ID cards not only reflect our school's image but also withstand the
+                            test of time."</p>
+                        <p class="testimonial-author">- Sarah Smith, Principal</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>"From design to delivery, this printing press has exceeded our expectations every step of the
+                            way. Their team is
+                            responsive, and their commitment to quality is evident in the finished product. Highly
+                            recommended!"</p>
+                        <p class="testimonial-author">- Mark John, HR Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>"When it comes to reliability and quality, this printing press stands out. We've been
+                            partners for years, and their
+                            dedication to meeting our unique needs has made them an indispensable part of our
+                            operations."</p>
+                        <p class="testimonial-author">- S.J Sameer, Office Manager</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>"Efficient, professional, and always willing to go the extra mile - that's how I would
+                            describe this printing press. They
+                            understand the importance of our projects and consistently deliver exceptional results."
+                        </p>
+                        <p class="testimonial-author">- Rohan Patel, Event Coordinator</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>"In a competitive market, finding a printing partner you can trust is crucial. Luckily, we
+                            found this printing press, and
+                            they've been instrumental in helping us maintain our professional image with high-quality ID
+                            cards and badges."
+                        </p>
+                        <p class="testimonial-author">- Deepika Singh, Marketing Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Printing Press</h5>
+                    <p>Welcome to our printing press, where quality meets precision. We pride ourselves on delivering
+                        top-notch printing solutions tailored to your unique needs. With our dedication to excellence
+                        and
+                        attention to detail, we ensure that every ID card we produce reflects the professionalism and
+                        integrity of your institution or organization</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="http://127.0.0.1:8000/admin/">Admin Login</a></li>
+                        <li><a href="http://127.0.0.1:8000/marketing-user">Marketing Login</a></li>
+                        <li><a href="#">School Login</a></li>
+                        <li><a href="#">Staff Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@printingpress.com</li>
+                        <li>Phone: +1234567890</li>
+                        <li>Address: 123 Main Street, City, Country</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-secondary text-center py-2">
+            <p>&copy; 2024 Printing Press. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
